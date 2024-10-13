@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+
+namespace WCF_Matriculas
+{
+    // NOTA: puede usar el comando "Cambiar nombre" del menú "Refactorizar" para cambiar el nombre de interfaz "IServicioCursos" en el código y en el archivo de configuración a la vez.
+    [ServiceContract]
+    public interface IServicioCursos
+    {
+        [OperationContract]
+        Boolean ActualizarCurso();
+        [OperationContract]
+        CursoDC ConsultarCurso();
+        [OperationContract]
+        Boolean EliminarCurso();
+        [OperationContract]
+        Boolean InsertarCurso();
+        [OperationContract]
+        List<CursoDC> ListarCurso();
+    }
+    [DataContract]
+    [Serializable]
+    public class CursoDC
+    {
+        [DataMember]
+        public String Cod_Cur { get; set; }
+        [DataMember]
+        public String Des_Cur { get; set; }
+        [DataMember]
+        public Int16 Cred_Cur { get; set; }
+        [DataMember]
+        public String Usu_Reg { get; set; }
+        [DataMember]
+        public DateTime Fec_Reg { get; set; }
+        [DataMember]
+        public String Usu_Ult_Mod { get; set; }
+        [DataMember]
+        public DateTime Fec_Ult_Mod { get; set; }
+        [DataMember]
+        public Int32? Est_Est { get; set; }
+    }
+}
