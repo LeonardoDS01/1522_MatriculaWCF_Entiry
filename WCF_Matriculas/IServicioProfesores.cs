@@ -12,13 +12,13 @@ namespace WCF_Matriculas
     public interface IServicioProfesores
     {
         [OperationContract]
-        Boolean ActualizarProfesor();
+        Boolean ActualizarProfesor(ProfesorDC objProfesorDC);
         [OperationContract]
-        ProfesorDC ConsultarProfesor();
+        ProfesorDC ConsultarProfesor(string strCodigo);
         [OperationContract]
-        Boolean EliminarProfesor();
+        Boolean EliminarProfesor(string strCodigo);
         [OperationContract]
-        Boolean InsertarProfesor();
+        Boolean InsertarProfesor(ProfesorDC objProfesorDC);
         [OperationContract]
         List<ProfesorDC> ListarProfesor();
     }
@@ -43,7 +43,15 @@ namespace WCF_Matriculas
         [DataMember]
         public String Cod_Espec { get; set; }
         [DataMember]
+        public String Especialidad { get; set; }
+        [DataMember]
         public String Id_Ubigeo { get; set; }
+        [DataMember]
+        public String Departamento { get; set; }
+        [DataMember]
+        public String Provincia { get; set; }
+        [DataMember]
+        public String Distrito { get; set; }
         [DataMember]
         public String Usu_Reg { get; set; }
         [DataMember]
@@ -54,7 +62,9 @@ namespace WCF_Matriculas
         public DateTime Fec_Ult_Mod { get; set; }
         [DataMember]
         public Int32? Est_Pro { get; set; }
+        public String Estado { get; set; }
+
         [DataMember]
-        public String Foto_Pro { get; set; }
+        public byte[] Foto_Pro { get; set; }
     }
 }
