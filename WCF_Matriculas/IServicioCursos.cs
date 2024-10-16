@@ -12,13 +12,13 @@ namespace WCF_Matriculas
     public interface IServicioCursos
     {
         [OperationContract]
-        Boolean ActualizarCurso();
+        Boolean ActualizarCurso(CursoDC objCursoDC);
         [OperationContract]
-        CursoDC ConsultarCurso();
+        CursoDC ConsultarCurso(String codigo);
         [OperationContract]
-        Boolean EliminarCurso();
+        Boolean EliminarCurso(String codigo);
         [OperationContract]
-        Boolean InsertarCurso();
+        Boolean InsertarCurso(CursoDC objCursoDC);
         [OperationContract]
         List<CursoDC> ListarCurso();
     }
@@ -41,6 +41,8 @@ namespace WCF_Matriculas
         [DataMember]
         public DateTime Fec_Ult_Mod { get; set; }
         [DataMember]
-        public Int32? Est_Est { get; set; }
+        public Int32? Est_Curso { get; set; }
+        [DataMember]
+        public String Estado { get; set; }
     }
 }
