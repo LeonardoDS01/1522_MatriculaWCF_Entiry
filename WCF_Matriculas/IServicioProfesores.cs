@@ -33,7 +33,7 @@ namespace WCF_Matriculas
         [DataMember]
         public String Ape_Pro { get; set; }
         [DataMember]
-        public String direccion_Pro { get; set; }
+        public String Direccion_Pro { get; set; }
         [DataMember]
         public String Email_Pro { get; set; }
         [DataMember]

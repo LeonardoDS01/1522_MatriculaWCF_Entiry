@@ -26,7 +26,7 @@ namespace WCF_Matriculas
                         objProfesorDC.Nom_Pro,
                         objProfesorDC.Ape_Pro,
                         objProfesorDC.Foto_Pro,
-                        objProfesorDC.direccion_Pro,
+                        objProfesorDC.Direccion_Pro,
                         objProfesorDC.Email_Pro,
                         Convert.ToDateTime(objProfesorDC.Fec_Nac_Pro),
                         objProfesorDC.DNI_Pro,
@@ -35,7 +35,7 @@ namespace WCF_Matriculas
                         objProfesorDC.Usu_Reg,
                         Convert.ToBoolean(objProfesorDC.Est_Pro)
 
-                    )
+                    );
 
                 MisMatriculas.SaveChanges();
 
@@ -89,7 +89,7 @@ namespace WCF_Matriculas
                         objProfesorDC.Nom_Pro,
                         objProfesorDC.Ape_Pro,
                         objProfesorDC.Foto_Pro,
-                        objProfesorDC.direccion_Pro,
+                        objProfesorDC.Direccion_Pro,
                         objProfesorDC.Email_Pro,
                         Convert.ToDateTime(objProfesorDC.Fec_Nac_Pro),
                         objProfesorDC.DNI_Pro,
@@ -130,7 +130,7 @@ namespace WCF_Matriculas
                     objProfesorDC.Cod_Pro = query.Cod_Pro;
                     objProfesorDC.Nom_Pro = query.Nom_Pro;
                     objProfesorDC.Ape_Pro = query.Ape_Pro;
-                    objProfesorDC.direccion_Pro = query.direccion_Pro;
+                    objProfesorDC.Direccion_Pro = query.direccion_Pro;
                     objProfesorDC.Email_Pro = query.email_Pro;
                     objProfesorDC.Fec_Nac_Pro = Convert.ToDateTime(query.Fec_Nac_Pro);
                     objProfesorDC.DNI_Pro = query.DNI_Pro;
@@ -175,7 +175,7 @@ namespace WCF_Matriculas
                     objProfesorDC.Cod_Pro = profesor.Cod_Pro;
                     objProfesorDC.Nom_Pro = profesor.Nom_Pro;
                     objProfesorDC.Ape_Pro = profesor.Ape_Pro;
-                    objProfesorDC.direccion_Pro = profesor.direccion_Pro;
+                    objProfesorDC.Direccion_Pro = profesor.direccion_Pro;
                     objProfesorDC.Email_Pro = profesor.email_Pro;
                     objProfesorDC.Fec_Nac_Pro = Convert.ToDateTime(profesor.Fec_Nac_Pro);
                     objProfesorDC.DNI_Pro = profesor.DNI_Pro;
