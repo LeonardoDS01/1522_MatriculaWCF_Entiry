@@ -407,5 +407,172 @@ namespace WCF_Matriculas
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Ubigeo_ProvinciasDepartamento_Result>("usp_Ubigeo_ProvinciasDepartamento", idDepartamentoParameter);
         }
+    
+        public virtual int usp_ActualizarSeccion(string vcod, string vCod_Cur, string vCod_Hor, string vCod_Pro, string vCod_Sed, Nullable<bool> vModalidad, string vNum_Aula, Nullable<int> vCupo, string vUsu_Ult_Mod, Nullable<bool> vEst_Sec)
+        {
+            var vcodParameter = vcod != null ?
+                new ObjectParameter("vcod", vcod) :
+                new ObjectParameter("vcod", typeof(string));
+    
+            var vCod_CurParameter = vCod_Cur != null ?
+                new ObjectParameter("vCod_Cur", vCod_Cur) :
+                new ObjectParameter("vCod_Cur", typeof(string));
+    
+            var vCod_HorParameter = vCod_Hor != null ?
+                new ObjectParameter("vCod_Hor", vCod_Hor) :
+                new ObjectParameter("vCod_Hor", typeof(string));
+    
+            var vCod_ProParameter = vCod_Pro != null ?
+                new ObjectParameter("vCod_Pro", vCod_Pro) :
+                new ObjectParameter("vCod_Pro", typeof(string));
+    
+            var vCod_SedParameter = vCod_Sed != null ?
+                new ObjectParameter("vCod_Sed", vCod_Sed) :
+                new ObjectParameter("vCod_Sed", typeof(string));
+    
+            var vModalidadParameter = vModalidad.HasValue ?
+                new ObjectParameter("vModalidad", vModalidad) :
+                new ObjectParameter("vModalidad", typeof(bool));
+    
+            var vNum_AulaParameter = vNum_Aula != null ?
+                new ObjectParameter("vNum_Aula", vNum_Aula) :
+                new ObjectParameter("vNum_Aula", typeof(string));
+    
+            var vCupoParameter = vCupo.HasValue ?
+                new ObjectParameter("vCupo", vCupo) :
+                new ObjectParameter("vCupo", typeof(int));
+    
+            var vUsu_Ult_ModParameter = vUsu_Ult_Mod != null ?
+                new ObjectParameter("vUsu_Ult_Mod", vUsu_Ult_Mod) :
+                new ObjectParameter("vUsu_Ult_Mod", typeof(string));
+    
+            var vEst_SecParameter = vEst_Sec.HasValue ?
+                new ObjectParameter("vEst_Sec", vEst_Sec) :
+                new ObjectParameter("vEst_Sec", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_ActualizarSeccion", vcodParameter, vCod_CurParameter, vCod_HorParameter, vCod_ProParameter, vCod_SedParameter, vModalidadParameter, vNum_AulaParameter, vCupoParameter, vUsu_Ult_ModParameter, vEst_SecParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarSeccion_Result> usp_ConsultarSeccion(string vcod)
+        {
+            var vcodParameter = vcod != null ?
+                new ObjectParameter("vcod", vcod) :
+                new ObjectParameter("vcod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarSeccion_Result>("usp_ConsultarSeccion", vcodParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> usp_DocentesxEspecialidad(string cod_esp)
+        {
+            var cod_espParameter = cod_esp != null ?
+                new ObjectParameter("cod_esp", cod_esp) :
+                new ObjectParameter("cod_esp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("usp_DocentesxEspecialidad", cod_espParameter);
+        }
+    
+        public virtual int usp_EliminarSeccion(string vcod)
+        {
+            var vcodParameter = vcod != null ?
+                new ObjectParameter("vcod", vcod) :
+                new ObjectParameter("vcod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_EliminarSeccion", vcodParameter);
+        }
+    
+        public virtual int usp_InsertarSeccion(string vCod_Cur, string vCod_Hor, string vCod_Pro, string vCod_Sed, Nullable<bool> vModalidad, string vNum_Aula, Nullable<int> vcupo, string vUsu_Ult, string vUsu_Ult_Mod, Nullable<bool> vEst_Sec)
+        {
+            var vCod_CurParameter = vCod_Cur != null ?
+                new ObjectParameter("vCod_Cur", vCod_Cur) :
+                new ObjectParameter("vCod_Cur", typeof(string));
+    
+            var vCod_HorParameter = vCod_Hor != null ?
+                new ObjectParameter("vCod_Hor", vCod_Hor) :
+                new ObjectParameter("vCod_Hor", typeof(string));
+    
+            var vCod_ProParameter = vCod_Pro != null ?
+                new ObjectParameter("vCod_Pro", vCod_Pro) :
+                new ObjectParameter("vCod_Pro", typeof(string));
+    
+            var vCod_SedParameter = vCod_Sed != null ?
+                new ObjectParameter("vCod_Sed", vCod_Sed) :
+                new ObjectParameter("vCod_Sed", typeof(string));
+    
+            var vModalidadParameter = vModalidad.HasValue ?
+                new ObjectParameter("vModalidad", vModalidad) :
+                new ObjectParameter("vModalidad", typeof(bool));
+    
+            var vNum_AulaParameter = vNum_Aula != null ?
+                new ObjectParameter("vNum_Aula", vNum_Aula) :
+                new ObjectParameter("vNum_Aula", typeof(string));
+    
+            var vcupoParameter = vcupo.HasValue ?
+                new ObjectParameter("vcupo", vcupo) :
+                new ObjectParameter("vcupo", typeof(int));
+    
+            var vUsu_UltParameter = vUsu_Ult != null ?
+                new ObjectParameter("vUsu_Ult", vUsu_Ult) :
+                new ObjectParameter("vUsu_Ult", typeof(string));
+    
+            var vUsu_Ult_ModParameter = vUsu_Ult_Mod != null ?
+                new ObjectParameter("vUsu_Ult_Mod", vUsu_Ult_Mod) :
+                new ObjectParameter("vUsu_Ult_Mod", typeof(string));
+    
+            var vEst_SecParameter = vEst_Sec.HasValue ?
+                new ObjectParameter("vEst_Sec", vEst_Sec) :
+                new ObjectParameter("vEst_Sec", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_InsertarSeccion", vCod_CurParameter, vCod_HorParameter, vCod_ProParameter, vCod_SedParameter, vModalidadParameter, vNum_AulaParameter, vcupoParameter, vUsu_UltParameter, vUsu_Ult_ModParameter, vEst_SecParameter);
+        }
+    
+        public virtual ObjectResult<usp_ListarSeccion_Result> usp_ListarSeccion()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ListarSeccion_Result>("usp_ListarSeccion");
+        }
+    
+        public virtual ObjectResult<usp_ObtenerCantidadAlumnosPorPeriodo_Result> usp_ObtenerCantidadAlumnosPorPeriodo(string periodo)
+        {
+            var periodoParameter = periodo != null ?
+                new ObjectParameter("Periodo", periodo) :
+                new ObjectParameter("Periodo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerCantidadAlumnosPorPeriodo_Result>("usp_ObtenerCantidadAlumnosPorPeriodo", periodoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ObtenerCargaTrabajoProfesor_Result> usp_ObtenerCargaTrabajoProfesor(string periodo)
+        {
+            var periodoParameter = periodo != null ?
+                new ObjectParameter("Periodo", periodo) :
+                new ObjectParameter("Periodo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerCargaTrabajoProfesor_Result>("usp_ObtenerCargaTrabajoProfesor", periodoParameter);
+        }
+    
+        public virtual ObjectResult<usp_ObtenerProfesoresPorCurso_Result> usp_ObtenerProfesoresPorCurso(string cod_Cur)
+        {
+            var cod_CurParameter = cod_Cur != null ?
+                new ObjectParameter("Cod_Cur", cod_Cur) :
+                new ObjectParameter("Cod_Cur", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerProfesoresPorCurso_Result>("usp_ObtenerProfesoresPorCurso", cod_CurParameter);
+        }
+    
+        public virtual ObjectResult<usp_ObtenerProfesoresPorEspecialidad_Result> usp_ObtenerProfesoresPorEspecialidad(string cod_Esp)
+        {
+            var cod_EspParameter = cod_Esp != null ?
+                new ObjectParameter("Cod_Esp", cod_Esp) :
+                new ObjectParameter("Cod_Esp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerProfesoresPorEspecialidad_Result>("usp_ObtenerProfesoresPorEspecialidad", cod_EspParameter);
+        }
+    
+        public virtual ObjectResult<usp_ObtenerSeccionesPorCurso_Result> usp_ObtenerSeccionesPorCurso(string cod_Cur)
+        {
+            var cod_CurParameter = cod_Cur != null ?
+                new ObjectParameter("Cod_Cur", cod_Cur) :
+                new ObjectParameter("Cod_Cur", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerSeccionesPorCurso_Result>("usp_ObtenerSeccionesPorCurso", cod_CurParameter);
+        }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBMatricula2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DBMatricula2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Tb_Cursos">
           <Key>
             <PropertyRef Name="Cod_Cur" />
@@ -332,6 +332,18 @@
           <Parameter Name="vUsu_Ult_Mod" Type="nvarchar" Mode="In" />
           <Parameter Name="vEst" Type="bit" Mode="In" />
         </Function>
+        <Function Name="usp_ActualizarSeccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vcod" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Cur" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Hor" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Pro" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Sed" Type="nvarchar" Mode="In" />
+          <Parameter Name="vModalidad" Type="bit" Mode="In" />
+          <Parameter Name="vNum_Aula" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCupo" Type="int" Mode="In" />
+          <Parameter Name="vUsu_Ult_Mod" Type="varchar" Mode="In" />
+          <Parameter Name="vEst_Sec" Type="bit" Mode="In" />
+        </Function>
         <Function Name="usp_ConsultarCursos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="vcod" Type="varchar" Mode="In" />
         </Function>
@@ -341,11 +353,17 @@
         <Function Name="usp_ConsultarProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="vcod" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="usp_ConsultarSeccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vcod" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_ConsultartCursos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="vcod" Type="varchar" Mode="In" />
         </Function>
         <Function Name="usp_ConsultarUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Login_Usu" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DocentesxEspecialidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod_esp" Type="varchar" Mode="In" />
         </Function>
         <Function Name="usp_EliminarCursos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="vcod" Type="nvarchar" Mode="In" />
@@ -354,6 +372,9 @@
           <Parameter Name="vcod" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_EliminarProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vcod" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_EliminarSeccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="vcod" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_Especialidad_Descripcion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -389,9 +410,37 @@
           <Parameter Name="vUsu_Reg" Type="nvarchar" Mode="In" />
           <Parameter Name="vEst" Type="bit" Mode="In" />
         </Function>
+        <Function Name="usp_InsertarSeccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vCod_Cur" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Hor" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Pro" Type="nvarchar" Mode="In" />
+          <Parameter Name="vCod_Sed" Type="nvarchar" Mode="In" />
+          <Parameter Name="vModalidad" Type="bit" Mode="In" />
+          <Parameter Name="vNum_Aula" Type="nvarchar" Mode="In" />
+          <Parameter Name="vcupo" Type="int" Mode="In" />
+          <Parameter Name="vUsu_Ult" Type="varchar" Mode="In" />
+          <Parameter Name="vUsu_Ult_Mod" Type="varchar" Mode="In" />
+          <Parameter Name="vEst_Sec" Type="bit" Mode="In" />
+        </Function>
         <Function Name="usp_ListarCursos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarEstudiantes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_ListarProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_ListarSeccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_ObtenerCantidadAlumnosPorPeriodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Periodo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ObtenerCargaTrabajoProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Periodo" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ObtenerProfesoresPorCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Cur" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ObtenerProfesoresPorEspecialidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Esp" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_ObtenerSeccionesPorCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Cod_Cur" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="usp_Ubigeo_Departamentos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="usp_Ubigeo_DistritosProvinciaDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdDepartamento" Type="char" Mode="In" />
@@ -462,8 +511,7 @@
             <End Role="Tb_Seccion" EntitySet="Tb_Seccion" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBMatricula2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -845,28 +893,28 @@
             <Parameter Name="vEst" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarCursos" ReturnType="Collection(DBMatricula2Model.usp_ConsultarCursos_Result)">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarEstudiantes" ReturnType="Collection(DBMatricula2Model.usp_ConsultarEstudiantes_Result)">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarProfesor" ReturnType="Collection(DBMatricula2Model.usp_ConsultarProfesor_Result)">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultartCursos" ReturnType="Collection(DBMatricula2Model.usp_ConsultartCursos_Result)">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarUsuario" ReturnType="Collection(DBMatricula2Model.usp_ConsultarUsuario_Result)">
-            <Parameter Name="Login_Usu" Mode="In" Type="String" />
+          <Parameter Name="Login_Usu" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarCursos">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarEstudiante">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_EliminarProfesor">
-            <Parameter Name="vcod" Mode="In" Type="String" />
+          <Parameter Name="vcod" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Especialidad_Descripcion" ReturnType="Collection(DBMatricula2Model.usp_Especialidad_Descripcion_Result)" />
           <FunctionImport Name="usp_InsertarCursos">
@@ -910,7 +958,56 @@
             <Parameter Name="IdProvincia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Ubigeo_ProvinciasDepartamento" ReturnType="Collection(DBMatricula2Model.usp_Ubigeo_ProvinciasDepartamento_Result)">
-            <Parameter Name="IdDepartamento" Mode="In" Type="String" />
+          <Parameter Name="IdDepartamento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ActualizarSeccion">
+            <Parameter Name="vcod" Mode="In" Type="String" />
+            <Parameter Name="vCod_Cur" Mode="In" Type="String" />
+            <Parameter Name="vCod_Hor" Mode="In" Type="String" />
+            <Parameter Name="vCod_Pro" Mode="In" Type="String" />
+            <Parameter Name="vCod_Sed" Mode="In" Type="String" />
+            <Parameter Name="vModalidad" Mode="In" Type="Boolean" />
+            <Parameter Name="vNum_Aula" Mode="In" Type="String" />
+            <Parameter Name="vCupo" Mode="In" Type="Int32" />
+            <Parameter Name="vUsu_Ult_Mod" Mode="In" Type="String" />
+            <Parameter Name="vEst_Sec" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarSeccion" ReturnType="Collection(DBMatricula2Model.usp_ConsultarSeccion_Result)">
+            <Parameter Name="vcod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DocentesxEspecialidad" ReturnType="Collection(Int32)">
+            <Parameter Name="cod_esp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_EliminarSeccion">
+            <Parameter Name="vcod" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_InsertarSeccion">
+            <Parameter Name="vCod_Cur" Mode="In" Type="String" />
+            <Parameter Name="vCod_Hor" Mode="In" Type="String" />
+            <Parameter Name="vCod_Pro" Mode="In" Type="String" />
+            <Parameter Name="vCod_Sed" Mode="In" Type="String" />
+            <Parameter Name="vModalidad" Mode="In" Type="Boolean" />
+            <Parameter Name="vNum_Aula" Mode="In" Type="String" />
+            <Parameter Name="vcupo" Mode="In" Type="Int32" />
+            <Parameter Name="vUsu_Ult" Mode="In" Type="String" />
+            <Parameter Name="vUsu_Ult_Mod" Mode="In" Type="String" />
+            <Parameter Name="vEst_Sec" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ListarSeccion" ReturnType="Collection(DBMatricula2Model.usp_ListarSeccion_Result)" />
+          <FunctionImport Name="usp_ObtenerCantidadAlumnosPorPeriodo" ReturnType="Collection(DBMatricula2Model.usp_ObtenerCantidadAlumnosPorPeriodo_Result)">
+            <Parameter Name="Periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ObtenerCargaTrabajoProfesor" ReturnType="Collection(DBMatricula2Model.usp_ObtenerCargaTrabajoProfesor_Result)">
+            <Parameter Name="Periodo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ObtenerProfesoresPorCurso" ReturnType="Collection(DBMatricula2Model.usp_ObtenerProfesoresPorCurso_Result)">
+            <Parameter Name="Cod_Cur" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ObtenerProfesoresPorEspecialidad" ReturnType="Collection(DBMatricula2Model.usp_ObtenerProfesoresPorEspecialidad_Result)">
+            <Parameter Name="Cod_Esp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ObtenerSeccionesPorCurso" ReturnType="Collection(DBMatricula2Model.usp_ObtenerSeccionesPorCurso_Result)">
+            <Parameter Name="Cod_Cur" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="usp_ConsultarCursos_Result">
@@ -1053,6 +1150,63 @@
         <ComplexType Name="usp_Ubigeo_ProvinciasDepartamento_Result">
           <Property Type="String" Name="IDPROV" Nullable="true" MaxLength="255" />
           <Property Type="String" Name="PROVINCIA" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarSeccion_Result">
+          <Property Type="String" Name="Id_Seccion" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Cur" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Hor" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Pro" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Sed" Nullable="false" MaxLength="6" />
+          <Property Type="Boolean" Name="Modalidad" Nullable="false" />
+          <Property Type="String" Name="Num_Aula" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="cupo" Nullable="true" />
+          <Property Type="String" Name="Usu_Reg" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Reg" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Est_Sec" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_ListarSeccion_Result">
+          <Property Type="String" Name="Id_Seccion" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Cur" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Hor" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Pro" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Cod_Sed" Nullable="false" MaxLength="6" />
+          <Property Type="Boolean" Name="Modalidad" Nullable="false" />
+          <Property Type="String" Name="Num_Aula" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="cupo" Nullable="true" />
+          <Property Type="String" Name="Usu_Reg" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Reg" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Usu_Ult_Mod" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Fec_Ult_Mod" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Est_Sec" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_ObtenerCantidadAlumnosPorPeriodo_Result">
+          <Property Type="String" Name="Periodo" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="CantidadAlumnosMatriculados" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_ObtenerCargaTrabajoProfesor_Result">
+          <Property Type="String" Name="Periodo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="NombreCompletoProfesor" Nullable="false" MaxLength="41" />
+          <Property Type="Int32" Name="Numero_Secciones" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="usp_ObtenerProfesoresPorCurso_Result">
+          <Property Type="String" Name="CodigoCurso" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="NombreCurso" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="NombreCompletoProfesor" Nullable="false" MaxLength="41" />
+        </ComplexType>
+        <ComplexType Name="usp_ObtenerProfesoresPorEspecialidad_Result">
+          <Property Type="String" Name="CodigoEspecialidad" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="NombreEspecialidad" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="NombreCompletoProfesor" Nullable="false" MaxLength="41" />
+          <Property Type="String" Name="CodigoProfesor" Nullable="false" MaxLength="6" />
+        </ComplexType>
+        <ComplexType Name="usp_ObtenerSeccionesPorCurso_Result">
+          <Property Type="String" Name="CodigoCurso" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="NombreCurso" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="NombreCompletoProfesor" Nullable="false" MaxLength="41" />
+          <Property Type="String" Name="Horario" Nullable="false" MaxLength="4000" />
+          <Property Type="Int32" Name="Cupos" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1414,6 +1568,95 @@
               <ComplexTypeMapping TypeName="DBMatricula2Model.usp_Ubigeo_ProvinciasDepartamento_Result">
                 <ScalarProperty Name="IDPROV" ColumnName="IDPROV" />
                 <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ActualizarSeccion" FunctionName="DBMatricula2Model.Store.usp_ActualizarSeccion" />
+          <FunctionImportMapping FunctionImportName="usp_ConsultarSeccion" FunctionName="DBMatricula2Model.Store.usp_ConsultarSeccion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ConsultarSeccion_Result">
+                <ScalarProperty Name="Id_Seccion" ColumnName="Id_Seccion" />
+                <ScalarProperty Name="Cod_Cur" ColumnName="Cod_Cur" />
+                <ScalarProperty Name="Cod_Hor" ColumnName="Cod_Hor" />
+                <ScalarProperty Name="Cod_Pro" ColumnName="Cod_Pro" />
+                <ScalarProperty Name="Cod_Sed" ColumnName="Cod_Sed" />
+                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+                <ScalarProperty Name="Num_Aula" ColumnName="Num_Aula" />
+                <ScalarProperty Name="cupo" ColumnName="cupo" />
+                <ScalarProperty Name="Usu_Reg" ColumnName="Usu_Reg" />
+                <ScalarProperty Name="Fec_Reg" ColumnName="Fec_Reg" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+                <ScalarProperty Name="Est_Sec" ColumnName="Est_Sec" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_DocentesxEspecialidad" FunctionName="DBMatricula2Model.Store.usp_DocentesxEspecialidad" />
+          <FunctionImportMapping FunctionImportName="usp_EliminarSeccion" FunctionName="DBMatricula2Model.Store.usp_EliminarSeccion" />
+          <FunctionImportMapping FunctionImportName="usp_InsertarSeccion" FunctionName="DBMatricula2Model.Store.usp_InsertarSeccion" />
+          <FunctionImportMapping FunctionImportName="usp_ListarSeccion" FunctionName="DBMatricula2Model.Store.usp_ListarSeccion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ListarSeccion_Result">
+                <ScalarProperty Name="Id_Seccion" ColumnName="Id_Seccion" />
+                <ScalarProperty Name="Cod_Cur" ColumnName="Cod_Cur" />
+                <ScalarProperty Name="Cod_Hor" ColumnName="Cod_Hor" />
+                <ScalarProperty Name="Cod_Pro" ColumnName="Cod_Pro" />
+                <ScalarProperty Name="Cod_Sed" ColumnName="Cod_Sed" />
+                <ScalarProperty Name="Modalidad" ColumnName="Modalidad" />
+                <ScalarProperty Name="Num_Aula" ColumnName="Num_Aula" />
+                <ScalarProperty Name="cupo" ColumnName="cupo" />
+                <ScalarProperty Name="Usu_Reg" ColumnName="Usu_Reg" />
+                <ScalarProperty Name="Fec_Reg" ColumnName="Fec_Reg" />
+                <ScalarProperty Name="Usu_Ult_Mod" ColumnName="Usu_Ult_Mod" />
+                <ScalarProperty Name="Fec_Ult_Mod" ColumnName="Fec_Ult_Mod" />
+                <ScalarProperty Name="Est_Sec" ColumnName="Est_Sec" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ObtenerCantidadAlumnosPorPeriodo" FunctionName="DBMatricula2Model.Store.usp_ObtenerCantidadAlumnosPorPeriodo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ObtenerCantidadAlumnosPorPeriodo_Result">
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="CantidadAlumnosMatriculados" ColumnName="CantidadAlumnosMatriculados" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ObtenerCargaTrabajoProfesor" FunctionName="DBMatricula2Model.Store.usp_ObtenerCargaTrabajoProfesor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ObtenerCargaTrabajoProfesor_Result">
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="NombreCompletoProfesor" ColumnName="NombreCompletoProfesor" />
+                <ScalarProperty Name="Numero_Secciones" ColumnName="Numero_Secciones" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ObtenerProfesoresPorCurso" FunctionName="DBMatricula2Model.Store.usp_ObtenerProfesoresPorCurso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ObtenerProfesoresPorCurso_Result">
+                <ScalarProperty Name="CodigoCurso" ColumnName="CodigoCurso" />
+                <ScalarProperty Name="NombreCurso" ColumnName="NombreCurso" />
+                <ScalarProperty Name="NombreCompletoProfesor" ColumnName="NombreCompletoProfesor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ObtenerProfesoresPorEspecialidad" FunctionName="DBMatricula2Model.Store.usp_ObtenerProfesoresPorEspecialidad">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ObtenerProfesoresPorEspecialidad_Result">
+                <ScalarProperty Name="CodigoEspecialidad" ColumnName="CodigoEspecialidad" />
+                <ScalarProperty Name="NombreEspecialidad" ColumnName="NombreEspecialidad" />
+                <ScalarProperty Name="NombreCompletoProfesor" ColumnName="NombreCompletoProfesor" />
+                <ScalarProperty Name="CodigoProfesor" ColumnName="CodigoProfesor" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ObtenerSeccionesPorCurso" FunctionName="DBMatricula2Model.Store.usp_ObtenerSeccionesPorCurso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBMatricula2Model.usp_ObtenerSeccionesPorCurso_Result">
+                <ScalarProperty Name="CodigoCurso" ColumnName="CodigoCurso" />
+                <ScalarProperty Name="NombreCurso" ColumnName="NombreCurso" />
+                <ScalarProperty Name="NombreCompletoProfesor" ColumnName="NombreCompletoProfesor" />
+                <ScalarProperty Name="Horario" ColumnName="Horario" />
+                <ScalarProperty Name="Cupos" ColumnName="Cupos" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

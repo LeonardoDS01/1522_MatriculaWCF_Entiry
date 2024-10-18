@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\WCF_Matriculas\DBMatricula.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\DBMatricula.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

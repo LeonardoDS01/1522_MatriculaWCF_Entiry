@@ -1,0 +1,12 @@
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\obj\Debug\WCF_Matriculas.csproj.AssemblyReference.cache
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\obj\Debug\WCF_Matriculas.csproj.CoreCompileInputs.cache
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\WCF_Matriculas.dll.config
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\WCF_Matriculas.dll
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\WCF_Matriculas.pdb
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\EntityFramework.dll
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\EntityFramework.SqlServer.dll
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\EntityFramework.xml
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\bin\Debug\EntityFramework.SqlServer.xml
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\obj\Debug\WCF_Matriculas.csproj.CopyComplete
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\obj\Debug\WCF_Matriculas.dll
+D:\archivos\ISIL\Ciclo2-2024\1522 - Desarrollo de Aplicaciones II\Avance2 - Parcial\MatriculaWCF_Entity\1522_MatriculaWCF_Entiry\WCF_Matriculas\obj\Debug\WCF_Matriculas.pdb
