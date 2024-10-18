@@ -21,6 +21,12 @@ namespace WCF_Matriculas
         Boolean InsertarProfesor(ProfesorDC objProfesorDC);
         [OperationContract]
         List<ProfesorDC> ListarProfesor();
+
+        // Servicio de consulta de negocio
+
+        [OperationContract]
+        List<ProfesorDC> ObtenerCargaTrabajoProfesor(string periodo);
+
     }
     [DataContract]
     [Serializable]
@@ -32,6 +38,7 @@ namespace WCF_Matriculas
         public String Nom_Pro { get; set; }
         [DataMember]
         public String Ape_Pro { get; set; }
+
         [DataMember]
         public String Direccion_Pro { get; set; }
         [DataMember]
@@ -66,5 +73,14 @@ namespace WCF_Matriculas
 
         [DataMember]
         public byte[] Foto_Pro { get; set; }
+
+        [DataMember]
+        public String NombreCompleto { get; set; }
+
+        [DataMember]
+        public String Periodo { get; set; }
+
+        [DataMember]
+        public Int16 Numero_secciones { get; set; }
     }
 }

@@ -197,5 +197,41 @@ namespace WCF_Matriculas
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<ProfesorDC> ObtenerCargaTrabajoProfesor(string periodo)
+        {
+            try
+            {
+                //creamos una instancia del model
+                DBMatricula2Entities MisMatriculas = new DBMatricula2Entities();
+                //creamos la cosa a retornar
+                List<ProfesorDC> objListaProfesorDC = new List<ProfesorDC>();
+                //***********************************************************//
+
+                var query = MisMatriculas.usp_ObtenerCargaTrabajoProfesor(periodo);
+
+                foreach (var profesor in query)
+                {
+                    ProfesorDC objProfesorDC = new ProfesorDC();
+
+                    objProfesorDC.NombreCompleto = profesor.NombreCompletoProfesor;
+                    objProfesorDC.Periodo = profesor.Periodo;
+                    objProfesorDC.Numero_secciones = Convert.ToInt16(profesor.Numero_Secciones);
+
+                    objListaProfesorDC.Add(objProfesorDC);
+                }
+
+                
+                //***********************************************************//
+                //retornamos la coleccion
+                return objListaProfesorDC;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
     }
 }
