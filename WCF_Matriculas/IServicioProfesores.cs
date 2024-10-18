@@ -30,6 +30,9 @@ namespace WCF_Matriculas
         [OperationContract]
         List<ProfesorDC> ObtenerProfesoresPorCurso(string strCodCurso);
 
+        [OperationContract]
+        List<ProfesorDC> ObtenerProfesoresPorEspecialidad(string strCodEspecialidad);
+
     }
     [DataContract]
     [Serializable]
