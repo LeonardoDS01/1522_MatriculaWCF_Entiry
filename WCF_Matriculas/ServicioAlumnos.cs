@@ -193,5 +193,40 @@ namespace WCF_Matriculas
                 throw new Exception(ex.Message);
             }
         }
+
+        public AlumnoDC ObtenerCantidadAlumnosPorPeriodo(String periodo)
+        {
+            try
+            {
+                //creamos una instancia del model
+                DBMatricula2Entities MisMatriculas = new DBMatricula2Entities();
+                //creamos la cosa a retornar
+
+                AlumnoDC objAlumnoDC = new AlumnoDC();
+                //***********************************************************//
+
+                var query = MisMatriculas.usp_ObtenerCantidadAlumnosPorPeriodo(periodo).FirstOrDefault();
+
+                if(query != null)
+                {
+                    objAlumnoDC.Periodo = query.Periodo;
+                    objAlumnoDC.Cantidad_alumnos_matri = Convert.ToInt16(query.CantidadAlumnosMatriculados);
+                }
+                else
+                {
+                    objAlumnoDC.Cantidad_alumnos_matri = 0;
+                }
+
+
+                //***********************************************************//
+                //retornamos la coleccion
+                return objAlumnoDC;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

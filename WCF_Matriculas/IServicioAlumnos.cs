@@ -26,6 +26,9 @@ namespace WCF_Matriculas
         [OperationContract]
         List<AlumnoDC> ListarEstudiante();
 
+        [OperationContract]
+        AlumnoDC ObtenerCantidadAlumnosPorPeriodo(String periodo);
+
     }
     [DataContract]
     [Serializable]
@@ -69,6 +72,13 @@ namespace WCF_Matriculas
         public byte[] Foto_Est { get; set; }
         [DataMember]
         public String Estado { get; set; }
+
+
+        [DataMember]
+        public String Periodo { get; set; }
+
+        [DataMember]
+        public Int16 Cantidad_alumnos_matri { get; set; }
 
     }
 }
