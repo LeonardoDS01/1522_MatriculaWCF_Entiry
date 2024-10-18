@@ -179,6 +179,43 @@ namespace WCF_Matriculas
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<SeccionDC> ObtenerSeccionesPorCurso(string strCodCurso)
+        {
+            try
+            {
+                //creamos una instancia del model
+                DBMatricula2Entities MisMatriculas = new DBMatricula2Entities();
+                //creamos la cosa a retornar
+                List<SeccionDC> objListaSeccionDC = new List<SeccionDC>();
+                //***********************************************************//
+
+                var query = MisMatriculas.usp_ObtenerSeccionesPorCurso(strCodCurso);
+
+                foreach (var seccion in query)
+                {
+                    SeccionDC objSeccionDC = new SeccionDC();
+
+                    objSeccionDC.Cod_Curso = seccion.CodigoCurso;
+                    objSeccionDC.Nom_Curso = seccion.NombreCurso;
+                    objSeccionDC.NombreCompletoProfesor = seccion.NombreCompletoProfesor;
+                    objSeccionDC.cupo = Convert.ToInt16(seccion.Cupos);
+
+                    objListaSeccionDC.Add(objSeccionDC);
+                }
+
+
+                //***********************************************************//
+                //retornamos la coleccion
+                return objListaSeccionDC;
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
     }
 }
 

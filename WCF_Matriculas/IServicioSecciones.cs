@@ -21,6 +21,11 @@ namespace WCF_Matriculas
         Boolean InsertarSeccion(SeccionDC objSeccionDC);
         [OperationContract]
         List<SeccionDC> ListarSeccion();
+
+        // Servicio de consulta de negocio
+        [OperationContract]
+        List<SeccionDC> ObtenerSeccionesPorCurso(string strCodCurso);
+
     }
     [DataContract]
     [Serializable]
@@ -52,6 +57,19 @@ namespace WCF_Matriculas
         public DateTime Fec_Ult_Mod { get; set; }
         [DataMember]
         public Int32? Est_Sec { get; set; }
+
+        [DataMember]
+        public String Cod_Curso { get; set; }
+
+        [DataMember]
+        public String Nom_Curso { get; set; }
+
+        [DataMember]
+        public String NombreCompletoProfesor { get; set; }
+
+        [DataMember]
+        public String Horario { get; set; }
+
 
     }
 }
