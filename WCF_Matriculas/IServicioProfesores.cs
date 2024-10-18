@@ -27,6 +27,9 @@ namespace WCF_Matriculas
         [OperationContract]
         List<ProfesorDC> ObtenerCargaTrabajoProfesor(string periodo);
 
+        [OperationContract]
+        List<ProfesorDC> ObtenerProfesoresPorCurso(string strCodCurso);
+
     }
     [DataContract]
     [Serializable]
@@ -82,5 +85,11 @@ namespace WCF_Matriculas
 
         [DataMember]
         public Int16 Numero_secciones { get; set; }
+
+        [DataMember]
+        public String Cod_Curso { get; set; }
+
+        [DataMember]
+        public String Nom_Curso { get; set; }
     }
 }
